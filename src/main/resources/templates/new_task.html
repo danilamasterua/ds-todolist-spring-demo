@@ -9,6 +9,7 @@
             <h1>Створення нового завдання</h1>
         </header>
         <main>
+            <a th:href="@{/}">Назад</a>
             <div class="justify-content-center d-flex">
             <form action="#" th:action="@{/saveTask}" th:object="${task}" method="post">
                 <label for="sd" class="form-label">Короткий опис завдання</label>

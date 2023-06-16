@@ -30,6 +30,13 @@ public class TaskController {
         return "new_task";
     }
 
+    @GetMapping("/showUpdateTaskForm/{id}")
+    public String showUpdateTaskForm(@PathVariable(value = "id") long id, Model model){
+        Task task = taskService.getTaskById(id);
+        model.addAttribute("task", task);
+        return "update_task";
+    }
+
     @PostMapping("/saveTask")
     public String saveTask(@ModelAttribute("task") Task task){
         taskService.saveTask(task);
